@@ -1,0 +1,40 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+`zi-tab`
+Zicode vertical tab
+
+@demo demo/index.html 
+-->
+
+<dom-module id="zi-tab">
+  <template>
+    <style>
+      :host {
+          display: table-cell;
+          padding: 0 20px;
+          white-space: nowrap;
+          transform: rotate(180deg);
+          text-transform: uppercase;
+          border-left: 1px solid rgba(255, 255, 255, 0.5);
+      }
+    </style>
+    <content></content>
+    
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'zi-tab',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'zi-tab',
+        },
+      },
+
+    });
+  </script>
+</dom-module>

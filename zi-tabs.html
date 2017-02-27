@@ -1,0 +1,56 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+`zi-tabs`
+Zicode vertical tabs
+
+@demo demo/index.html 
+-->
+
+<dom-module id="zi-tabs">
+  <template>
+    <style>
+      :host {
+        display: table;
+        background: var(--tabs-background, #edc);
+        position: relative;
+        height: 100%;
+        width: var(--tab-height, 60px);
+      }
+
+      .list {
+        background: #edc;
+        transform: rotate(90deg);
+        transform-origin: 0 0;
+        position: absolute;
+        top: 0;
+        left: var(--tab-height, 60px);
+        height: var(--tab-height, 60px);
+      }
+
+      :host ::content zi-tab {
+        height: var(--tab-height, 60px);
+        line-height: var(--tab-height, 60px);
+      }
+    </style>
+    <div class="list">
+      <content>
+      </content>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'zi-tabs',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'zi-tabs',
+        },
+      },
+
+    });
+  </script>
+</dom-module>
