@@ -3,7 +3,9 @@
   "description": "Zicode vertical tabs",
   "main": "zi-tabs.html",
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.4.0"
+    "polymer": "Polymer/polymer#^1.4.0",
+    "iron-behaviors": "PolymerElements/iron-behaviors#^1.0.0",
+    "iron-menu-behavior": "PolymerElements/iron-menu-behavior#^1.1.0"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",

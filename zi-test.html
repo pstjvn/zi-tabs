@@ -2,49 +2,37 @@
 <link rel="import" href="zi-tabs.html">
 <link rel="import" href="zi-tab.html">
 
-<!--
-`zi-tab`
-Zicode vertical tab
-
-@demo demo/index.html 
--->
-
 <dom-module id="zi-test">
-  <template>
+  <template strip-whitespace>
     <style>
       :host {
-         display: block;
-         width: 600px;
-         height: 500px;
-         position: relative;
-         background: yellow;
+        display: block;
+        width: 600px;
+        height: 500px;
+        position: relative;
+        background: yellow;
       }
 
-      zi-tabs {
-        --tabs-background: red;
-        --tab-height: 100px;
+      .uppercase {
+        text-transform: uppercase;
       }
     </style>
-
-    <zi-tabs>
-        <zi-tab>Lalala</zi-tab>
-        <zi-tab>Muuuu</zi-tab>
+    <zi-tabs selected="{{_selected}}">
+      <zi-tab><span class="uppercase">test</span>&nbsp;test</zi-tab>
+      <zi-tab>Muuuu <span class="uppercase">uppercase letters</span></zi-tab>
+      <zi-tab>[[_selected]]</zi-tab>
     </zi-tabs>
-    
   </template>
 
   <script>
     Polymer({
-
       is: 'zi-test',
-
       properties: {
-        prop1: {
-          type: String,
-          value: 'zi-test',
-        },
-      },
-
+        _selected: {
+          type: Number,
+          value: 0
+        }
+      }
     });
   </script>
 </dom-module>

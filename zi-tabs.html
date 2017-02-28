@@ -1,10 +1,11 @@
 <link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-menu-behavior/iron-menubar-behavior.html">
 
 <!--
 `zi-tabs`
 Zicode vertical tabs
 
-@demo demo/index.html 
+@demo demo/index.html
 -->
 
 <dom-module id="zi-tabs">
@@ -31,26 +32,26 @@ Zicode vertical tabs
       :host ::content zi-tab {
         height: var(--tab-height, 60px);
         line-height: var(--tab-height, 60px);
+        background-color: var(--tab-background, transparent);
+        color: var(--tab-color, black);
+      }
+
+      :host ::content zi-tab[aria-selected="true"] {
+        background-color: var(--active-tab-background, yellow);
+        color: var(--active-tab-color, red);
       }
     </style>
     <div class="list">
-      <content>
-      </content>
+      <content></content>
     </div>
   </template>
-
   <script>
     Polymer({
-
       is: 'zi-tabs',
-
-      properties: {
-        prop1: {
-          type: String,
-          value: 'zi-tabs',
-        },
+      hostAttributes: {
+        role: 'tablist'
       },
-
+      behaviors: [Polymer.IronMenubarBehavior]
     });
   </script>
 </dom-module>

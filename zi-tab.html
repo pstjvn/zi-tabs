@@ -1,40 +1,38 @@
 <link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-behaviors/iron-button-state.html">
+<link rel="import" href="../iron-behaviors/iron-control-state.html">
 
 <!--
 `zi-tab`
-Zicode vertical tab
+Zicode vertical tab. Designed to be used in conjunction with zi-tabs.
 
-@demo demo/index.html 
+@demo demo/index.html
 -->
 
 <dom-module id="zi-tab">
   <template>
     <style>
       :host {
-          display: table-cell;
-          padding: 0 20px;
-          white-space: nowrap;
-          transform: rotate(180deg);
-          text-transform: uppercase;
-          border-left: 1px solid rgba(255, 255, 255, 0.5);
+        display: table-cell;
+        padding: 0 20px;
+        white-space: nowrap;
+        transform: rotate(180deg);
+        outline: none;
       }
     </style>
     <content></content>
-    
   </template>
-
   <script>
     Polymer({
-
       is: 'zi-tab',
-
-      properties: {
-        prop1: {
-          type: String,
-          value: 'zi-tab',
-        },
+      // Make the browser see the element as a tab.
+      hostAttributes: {
+        role: 'tab'
       },
-
+      behaviors: [
+        Polymer.IronControlState,
+        Polymer.IronButtonState
+      ]
     });
   </script>
 </dom-module>
